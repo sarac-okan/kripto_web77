@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Price Tracker</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 20px; }
+        input, button { padding: 8px; margin: 5px; }
+        .price { font-size: 24px; margin: 20px; }
+        img { max-width: 80%; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Crypto Price Tracker</h1>
+    <form method="POST">
+        <input type="text" name="coin" placeholder="Enter coin (e.g. bitcoin)" required>
+        <button type="submit">Get Price</button>
+    </form>
+    
+    {% if price %}
+    <div class="price">
+        {{ coin.upper() }} Price: ${{ price }}
+    </div>
+    {% endif %}
+    
+    {% if plot_url %}
+    <img src="{{ plot_url }}" alt="Price Chart">
+    {% endif %}
+</body>
+</html>
