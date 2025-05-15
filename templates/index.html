@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Crypto Price Tracker</title>
-    <style>
-        body { font-family: Arial; text-align: center; padding: 20px; }
-        input, button { padding: 8px; margin: 5px; }
-        .price { font-size: 24px; margin: 20px; }
-        img { max-width: 80%; margin-top: 20px; }
-    </style>
+    <meta charset="UTF-8">
+    <title>Kripto Takip</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Crypto Price Tracker</h1>
-    <form method="POST">
-        <input type="text" name="coin" placeholder="Enter coin (e.g. bitcoin)" required>
-        <button type="submit">Get Price</button>
-    </form>
-    
-    {% if price %}
-    <div class="price">
-        {{ coin.upper() }} Price: ${{ price }}
-    </div>
-    {% endif %}
-    
-    {% if plot_url %}
-    <img src="{{ plot_url }}" alt="Price Chart">
-    {% endif %}
+    <h1>Kripto Takip</h1>
+    <input id="coin" placeholder="bitcoin">
+    <select id="currency">
+        <option value="usd">$ USD</option>
+        <option value="try">₺ TRY</option>
+        <option value="usdt">₮ USDT</option>
+    </select>
+    <select id="days">
+        <option value="1">1 Gün</option>
+        <option value="7" selected>7 Gün</option>
+        <option value="14">14 Gün</option>
+        <option value="30">30 Gün</option>
+    </select>
+    <button onclick="getCoin()">Göster</button>
+    <h2 id="price"></h2>
+    <img id="logo" src="" alt="" width="64">
+    <canvas id="chart" height="100"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
