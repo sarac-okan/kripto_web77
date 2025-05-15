@@ -309,4 +309,4 @@ apply_theme()
 # Güncelleme fonksiyonu
 update_price()
 
-root.mainloop()app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+root.mainloop()
