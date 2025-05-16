@@ -88,11 +88,6 @@ body.dark-theme li {
     color: #eee;
 }
 
-img {
-    margin-top: 10px;
-    border-radius: 8px;
-}
-
 footer {
     margin-top: 40px;
     color: #888;
@@ -103,7 +98,6 @@ body.dark-theme footer {
     color: #bbb;
 }
 
-/* Tema değiştirme butonu */
 .theme-toggle {
     position: fixed;
     top: 20px;
