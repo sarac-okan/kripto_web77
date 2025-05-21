@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 import requests
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
+from datetime import datetime
 import io, base64
 
 app = Flask(__name__)
+CORS(app)  # CORS'u aktif et
 
 favorites = []
 alarms = []
